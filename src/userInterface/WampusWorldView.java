@@ -2,17 +2,23 @@ package userInterface;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import java.awt.GridBagLayout;
 import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
 
 import javax.swing.JLabel;
 
 public class WampusWorldView {
 
 	private JFrame frame;
+	private JLabel []myGrids = new JLabel[100];
+	
 
 	/**
 	 * Launch the application.
@@ -46,20 +52,22 @@ public class WampusWorldView {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
+		frame.setBackground(Color.red);
+		//frame.setOpacity(0);
+		frame.getContentPane().setBackground(new Color(254, 219, 208));
+		Image icon = Toolkit.getDefaultToolkit().getImage("images/background0001.jpg");
+	    frame.setIconImage(icon);
+		//frame.setIconImage(new Image("images/background0001.jpg"));
 		
+		myGrids[0] = new JLabel();
+		myGrids[0].setBackground(Color.BLACK);
+		myGrids[0].setOpaque(true);
+		myGrids[0].setBounds(10, 11, 50, 50);
+		frame.getContentPane().add(myGrids[0]);
 		
-		
-		JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setBackground(Color.BLACK);
-		lblNewLabel.setOpaque(true);
-		//lblNewLabel.setBackground(Color.black);
-		
-		lblNewLabel.setBounds(10, 11, 50, 50);
-		frame.getContentPane().add(lblNewLabel);
-		
-		JLabel label = new JLabel();
+		JLabel label = new JLabel("hi");
 		label.setBounds(70, 11, 50, 50);
-		lblNewLabel.setOpaque(true);
+		//myGrids[0].setOpaque(true);
 		
 		
 		
@@ -69,7 +77,7 @@ public class WampusWorldView {
 		Image newimg = img.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
 		iconLogo = new ImageIcon(newimg);
 		
-		lblNewLabel.setIcon(iconLogo);
+		//lblNewLabel.setIcon(iconLogo);
 		
 		
 		frame.getContentPane().add(label);
@@ -462,9 +470,22 @@ public class WampusWorldView {
 		label_97.setBounds(490, 560, 50, 50);
 		frame.getContentPane().add(label_97);
 		
-		JLabel label_98 = new JLabel("New label");
+		JLabel label_98 = new JLabel("New ");
 		label_98.setBounds(550, 560, 50, 50);
 		frame.getContentPane().add(label_98);
+		label_98.setBackground(Color.BLUE);
+		label_98.setOpaque(true);
+		
+		label_97.setBackground(Color.BLUE);
+		label_97.setOpaque(true);
+		
+		
+		
+		//lblNewLabel.setIcon(iconLogo);
+		
+		
+		
+		
 	}
 
 }
