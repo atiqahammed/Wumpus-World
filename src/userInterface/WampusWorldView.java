@@ -3,8 +3,11 @@ package userInterface;
 import java.awt.Color;
 import java.awt.EventQueue;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import java.awt.GridBagLayout;
+import java.awt.Image;
+
 import javax.swing.JLabel;
 
 public class WampusWorldView {
@@ -50,12 +53,25 @@ public class WampusWorldView {
 		lblNewLabel.setBackground(Color.BLACK);
 		lblNewLabel.setOpaque(true);
 		//lblNewLabel.setBackground(Color.black);
+		
 		lblNewLabel.setBounds(10, 11, 50, 50);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel label = new JLabel("New label");
+		JLabel label = new JLabel();
 		label.setBounds(70, 11, 50, 50);
 		lblNewLabel.setOpaque(true);
+		
+		
+		
+		ImageIcon iconLogo = new ImageIcon("images/green_monster.png");
+		// In init() method write this code
+		Image img = iconLogo.getImage();
+		Image newimg = img.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
+		iconLogo = new ImageIcon(newimg);
+		
+		lblNewLabel.setIcon(iconLogo);
+		
+		
 		frame.getContentPane().add(label);
 		
 		JLabel label_1 = new JLabel("New label");
